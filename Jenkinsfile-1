@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout git') {
             steps {
-               git branch: 'main', url: 'https://github.com/logicopslab/java-web-app'
+               git branch: 'main', url: 'https://github.com/mukeshmahato1/DevSecOps_Project.git'
             }
         }
         
@@ -24,7 +24,7 @@ pipeline {
             steps{
                    withSonarQubeEnv('sonarqube') {
                         sh 'mvn clean verify sonar:sonar \
-                        -Dsonar.projectKey=devsecopsproject-key \
+                        -Dsonar.projectKey=devsecops-key \
                         -Dsonar.host.url=$sonarurl \
                         -Dsonar.login=$sonarlogin'
                     }
