@@ -25,11 +25,12 @@ pipeline {
                    withSonarQubeEnv('sonarqube') {
                         sh 'mvn clean verify sonar:sonar \
                         -Dsonar.projectKey=devsecops-key \
-                        -Dsonar.host.url=$sonarurl \
-                        -Dsonar.login=$sonarlogin'
+                        -Dsonar.projectName='devsecops' \
+                        -Dsonar.host.url=http://localhost:9000 \
+                        -Dsonar.token=sqp_077f94d27c9364956e539105f48fabc49f44f277'
                     }
+                }
             }
-        }
         }
     }
         
